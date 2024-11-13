@@ -10,8 +10,9 @@ public abstract class NPCStats : MonoBehaviour
     [SerializeField] protected int defense;
     [SerializeField] protected float speed;
 
-    protected abstract void Talks();
-    protected abstract void Attack();
+   
+    
+    protected abstract void Movement();
 
-
+    protected abstract void Hitted();
 }

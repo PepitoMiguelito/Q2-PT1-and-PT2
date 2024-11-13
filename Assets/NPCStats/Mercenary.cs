@@ -6,19 +6,27 @@ public class Mercenary : NPCStats
 {
     private void Start()
     {
-        Talks();
-        Attack();
-        Debug.Log("Health:" + health);
+
+        Hitted();
+        Movement();
+        Damage(30);
     }
 
-    protected override void Attack()
+    protected override void Movement()
     {
-        Debug.Log("Mercenary hits Goblin");
+        Debug.Log("Mercenary moves");
     }
 
-    protected override void Talks()
+    protected override void Hitted()
     {
-        Debug.Log("Mercenary Talks");
+        Debug.Log("Mercenary got punched");
     }
-    
+
+    public void Damage(int Damage)
+    {
+
+        Debug.Log("Mercenary Health: " + health);
+        health -= Damage;
+        Debug.Log("Mercenary new health: " + health);
+    }
 }

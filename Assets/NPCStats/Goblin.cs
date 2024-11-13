@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class Goblin : NPCStats, iDamagable
 {
-  private void Start()
+    private void Start()
     {
-        Talks();
-        Attack();
-        Debug.Log("Health:" + health);
+
+        Hitted();
+        Movement();
+        Damage(30);
     }
 
-    protected override void Attack()
+    protected override void Movement()
     {
-        Debug.Log("Mercenary hits Goblin");
+        Debug.Log("Goblin moves");
     }
 
-    protected override void Talks()
+    protected override void Hitted()
     {
-        Debug.Log("Mercenary walks");
+        Debug.Log("Goblin got punched");
     }
 
-    public void Damage(int damage)
+    public void Damage(int Damage)
     {
-        Debug.Log("Goblin health" + health);
-        health -= damage;
-        Debug.Log("Skeleton Health" + health);
-        
 
-        
+        Debug.Log("Goblin Health: " + health);
+        health -= Damage;
+        Debug.Log("Goblin new health: " + health);
     }
 }
